@@ -8,3 +8,5 @@ Ulkoasun toteutan luultavasti **Tkinterillä**.
 Tässä on linkki [viikon 1 README](https://github.com/Iltsukka/ot-harjoitusty/blob/main/laskarit/viikko1.md)  
 
 [Vaatimusmäärittely](https://github.com/Iltsukka/ot-harjoitusty/blob/main/dokumentaatio/vaatimusmaarittely.md)
+
+[Työaikakirjanpito](https://github.com/Iltsukka/ot-harjoitusty/blob/main/dokumentaatio/tuntikirjanpito.md)
