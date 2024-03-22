@@ -12,9 +12,10 @@ sequenceDiagram
     main->>rautatientori: lataa_arvoa(kallen_kortti, 3)
     rautatientori->>Matkakortti('Kalle'): kasvata_arvoa(3)
     main->>ratikka6: osta_lippu(kallen_kortti, 0)
+    ratikka6->>Matkakortti('Kalle'): vahenna_arvoa(1.5)
     ratikka6-->>main: True
     main->>bussi244: osta_lippu(kallen_kortti, 2)
-    bussi244->>Matkakortti('Kalle'): vahenna_arvoa(1.5)
+    
     bussi244-->>main: Fakse
 
 ```
