@@ -1,12 +1,15 @@
-from entities.book import Book
+from repositories.book_repository import book_repository
 
 class BookService:
-    def __init__(self):
-        pass
+    def __init__(self, book_repository = book_repository):
+        self.book_repository = book_repository
     def create_book(self, title, author):
-        pass
+        if self.book_repository.add_book(title, author):
+            return True
+        else:
+            return False
 
-    def find_all(self):
-        return [Book('Title', 'Author1', '1'), Book('Sinune Egyptiläinen', 'Author2', '2')]
+    def all_books(self):
+        return self.book_repository.find_all()
 
 book_service = BookService()

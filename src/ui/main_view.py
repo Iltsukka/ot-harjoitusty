@@ -13,12 +13,15 @@ class MainView:
         self._initialize_book_list_view()
         
 
-        
+        #book servicen tulee palauttaa kirja-objekti, jossa löytyy kirjan id, muutenkin tämä pitää muuttaa
     def _create_book(self):
         title = self._title_entry.get()
         author = self._author_entry.get()
-        book_service.create_book(title, author)
-        print(title, author)
+        if book_service.create_book(title, author):
+            label_title = ttk.Label(master=self._frame_second, text=title)
+            label_author = ttk.Label(master=self._frame_second, text=author)
+            label_title.grid()
+            label_author.grid()
     
     def _initialize_add_book(self):
         self._frame = ttk.Frame(master=self._root)
@@ -35,10 +38,11 @@ class MainView:
         self._author_entry.grid(row=2, column=1, sticky=(constants.W, constants.E), padx=5, pady=5)
         button.grid(row=3, column=0, columnspan=2, sticky=(constants.W, constants.E), pady=5)
         self._frame.grid_columnconfigure(1, weight=1, minsize=300)
-    
+
+    #kirjojen näyttäminen tulee muuttaa listboxiksi
     def _initialize_book_list_view(self):
         self._frame_second = ttk.Frame(master=self._root)
-        books = book_service.find_all()
+        books = book_service.all_books()
         title = ttk.Label(master=self._frame_second, text='Books')
         book_title = ttk.Label(master=self._frame_second, text='Title:')
         author = ttk.Label(master=self._frame_second, text='Author:')
@@ -58,17 +62,7 @@ class MainView:
         self._frame_second.grid_columnconfigure(1, weight=1)
         self._frame_second.grid_columnconfigure(0, weight=1)
         self._frame_second.grid_columnconfigure(2, weight=1)
-
-
-
     
-    def _hide_book_list_view(self):
-        self._frame_second.destroy()
-    
-    def _show_books_list_view(self):
-        pass
-
-
 
 
     
