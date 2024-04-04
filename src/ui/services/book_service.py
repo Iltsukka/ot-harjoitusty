@@ -7,6 +7,6 @@ class BookService:
         pass
 
     def find_all(self):
-        return [Book('Title', 'Author', '1'), Book('Sinuhe', 'Waltari', '2')]
+        return [Book('Title', 'Author1', '1'), Book('Sinune Egyptiläinen', 'Author2', '2')]
 
 book_service = BookService()
