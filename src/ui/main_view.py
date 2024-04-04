@@ -1,4 +1,5 @@
 from tkinter import ttk, constants
+from services.book_service import book_service
 
 class MainView:
     def __init__(self, root):
@@ -7,23 +8,40 @@ class MainView:
         self._initialize()
     
     def _initialize(self):
+        self._initialize_add_book()
+        self._initialize_book_list_view()
+        
+
+        
+    def _create_book(self):
+        title = self._title_entry.get()
+        author = self._author_entry.get()
+        book_service.create_book(title, author)
+        print(title, author)
+    
+    def _initialize_add_book(self):
         self._frame = ttk.Frame(master=self._root)
         label = ttk.Label(master=self._frame, text='Add a Book')
         title_label = ttk.Label(master=self._frame, text='Title:')
         author_label = ttk.Label(master=self._frame, text='Author:')
-        button = ttk.Button(master=self._frame, text='Submit')
-        title_entry = ttk.Entry(master=self._frame)
-        author_entry = ttk.Entry(master=self._frame)
+        button = ttk.Button(master=self._frame, text='Submit', command=self._create_book)
+        self._title_entry = ttk.Entry(master=self._frame)
+        self._author_entry = ttk.Entry(master=self._frame)
         label.grid(row=0, column=0,columnspan=2)
         title_label.grid(row=1, column=0, padx=5, pady=5)
-        title_entry.grid(row=1, column=1, sticky=(constants.W, constants.E), padx=5, pady=5)
+        self._title_entry.grid(row=1, column=1, sticky=(constants.W, constants.E), padx=5, pady=5)
         author_label.grid(row=2, column=0, padx=5, pady=5)
-        author_entry.grid(row=2, column=1, sticky=(constants.W, constants.E), padx=5, pady=5)
+        self._author_entry.grid(row=2, column=1, sticky=(constants.W, constants.E), padx=5, pady=5)
         button.grid(row=3, column=0, columnspan=2, sticky=(constants.W, constants.E), pady=5)
         self._frame.grid_columnconfigure(1, weight=1, minsize=300)
+    
+    def _initialize_book_list_view(self):
+        books = book_service.find_all()
+        for book in books:
+            label = ttk.Label(master=self._frame, text=book.title)
+            label.grid()
 
-        
-            
+
     
     def destroy(self):
         self._frame.destroy()
