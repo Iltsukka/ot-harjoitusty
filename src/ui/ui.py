@@ -1,5 +1,5 @@
 from tkinter import Tk, ttk, constants
-from main_view import MainView
+from ui.main_view import MainView
 
 class UI:
     def __init__(self, root):
@@ -12,9 +12,3 @@ class UI:
     def _show_main_view(self):
         self._current_view = MainView(self._root)
         self._current_view.pack()
-
-window = Tk()
-window.title('Book management app')
-ui = UI(window)
-ui.start()
-window.mainloop()
