@@ -1,13 +1,24 @@
 # Ohjelmistotekniikka, harjoitustyo
+## Book management app
+Ohjelma, jonka avulla ylläpidetään lukulistaa, jolta voi lisätä, poistaa ja suodattaa kirjoja.
 
-## Mahdollinen aihe:
-
-**Sovellus**, jonne voi lisätä kirjoja, joita tulee *lukemaan* ja **merkata** ne luetuiksi ja mahdollisesti antaa arvio.  
-Ulkoasun toteutan luultavasti **Tkinterillä**.
-
-Tässä on linkki [viikon 1 README](https://github.com/Iltsukka/ot-harjoitusty/blob/main/laskarit/viikko1.md)  
-[laskarit](https://github.com/Iltsukka/ot-harjoitusty/tree/main/laskarit)
+## Dokumentaatio:
 
 [Vaatimusmäärittely](https://github.com/Iltsukka/ot-harjoitusty/blob/main/dokumentaatio/vaatimusmaarittely.md)
 
 [Työaikakirjanpito](https://github.com/Iltsukka/ot-harjoitusty/blob/main/dokumentaatio/tuntikirjanpito.md)
+
+[Changelog -tiedosto](https://github.com/Iltsukka/ot-harjoitusty/blob/main/dokumentaatio/changelog.md)
+
+## Alustustoimenpiteet:
+Suorita projektin juurihakemistossa komento `poetry install`, jotta sovelluksen suoritusympäristö päivittyy
+## Komentorivitoiminnot:
+
+### Sovelluksen käynnistys:
+Komento `poetry run invoke start` käynnistää ohjelman
+
+### Testaaminen:
+Komento `poetry run invoke test` suorittaa testit
+
+### Testikattavuusraportti:
+Komento `poetry run invoke coverage-report` suorittaa testit ja muodostaa testikattavuusraportin, joka avautuu suoraan oletusselaimeen (Vain Linux -käyttöjärjestelmällä)
