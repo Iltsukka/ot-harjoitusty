@@ -8,3 +8,4 @@
 |04.04| 2h| Alustava sovelluslogiikka ja repository suunnittelumallin käyttöönotto|
 |08.04| 2h |Import -ongelmien selvittäminen|
 |08.04|1h|book-servicen testit, invoke tehtävät|
+|11.04|1.5h|ListBox Widget otettu käyttöön kirjojen näyttämistä varten|
