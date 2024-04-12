@@ -9,7 +9,8 @@ class BookRepository:
         return self._books
 
     def add_book(self, title, author):
-        self._books.append(Book(title, author,0))
-        return True
+        book = Book(title, author, 0)
+        self._books.append(book)
+        return book
 
 book_repository = BookRepository()

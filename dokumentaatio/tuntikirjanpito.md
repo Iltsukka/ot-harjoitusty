@@ -9,3 +9,5 @@
 |08.04| 2h |Import -ongelmien selvittäminen|
 |08.04|1h|book-servicen testit, invoke tehtävät|
 |11.04|1.5h|ListBox Widget otettu käyttöön kirjojen näyttämistä varten|
+|11.04|2h|Widget kirjojen suodatusta varten, refaktoroi koodia|
+|12.04|1.5h|Kirjojen suodattaminen otsikon/kirjailijan perusteella|
