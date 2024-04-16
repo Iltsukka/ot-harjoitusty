@@ -8,14 +8,14 @@ class BookService:
 
     def all_books(self):
         return self.book_repository.find_all()
-    
+
     def sort_by(self, mechanism):
         books = self.all_books()
         if mechanism == 'Title':
             return sorted(books, key=lambda book: book.title.lower())
         if mechanism =='Author':
             return sorted(books,key=lambda book: book.author.lower())
-        
+
         return books
 
 

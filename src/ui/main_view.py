@@ -23,6 +23,8 @@ class MainView:
         created_book = book_service.create_book(title, author)
         book_information = f'{created_book.title} - {created_book.author}'
         self._book_listbox.insert(END, book_information)
+        self._title_entry.delete(0, END)
+        self._author_entry.delete(0, END)
         for book in self._books:
             print(book.title)
     
@@ -81,6 +83,9 @@ class MainView:
     #need to update deleting on repository and service level as well
     def _delete(self):
         selection = self._book_listbox.curselection()
+        if selection == ():
+            print('no option chosen for deletion')
+            return #need to throw an error visible to user
         print(self._book_listbox.get(selection))
         self._book_listbox.delete(selection)
     
