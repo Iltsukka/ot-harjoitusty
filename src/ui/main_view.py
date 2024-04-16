@@ -17,7 +17,6 @@ class MainView:
         self._initialize_book_list_view()
         
 
-        #book servicen tulee palauttaa kirja-objekti, jossa löytyy kirjan id, muutenkin tämä pitää muuttaa
     def _create_book(self):
         title = self._title_entry.get()
         author = self._author_entry.get()
@@ -79,7 +78,7 @@ class MainView:
             book_information = f'{book.title} - {book.author}'
             self._book_listbox.insert(END, book_information)
     
-
+    #need to update deleting on repository and service level as well
     def _delete(self):
         selection = self._book_listbox.curselection()
         print(self._book_listbox.get(selection))
