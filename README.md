@@ -10,6 +10,8 @@ Ohjelma, jonka avulla ylläpidetään lukulistaa, jolta voi lisätä, poistaa ja
 
 [Changelog -tiedosto](https://github.com/Iltsukka/ot-harjoitusty/blob/main/dokumentaatio/changelog.md)
 
+[Arkkitehtuurikuvaus](https://github.com/Iltsukka/ot-harjoitusty/blob/main/dokumentaatio/arkkitehtuuri.md)
+
 ## Alustustoimenpiteet:
 Suorita projektin juurihakemistossa komento `poetry install`, jotta sovelluksen suoritusympäristö päivittyy
 ## Komentorivitoiminnot:
