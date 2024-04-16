@@ -24,3 +24,6 @@ Komento `poetry run invoke test` suorittaa testit
 
 ### Testikattavuusraportti:
 Komento `poetry run invoke coverage-report` suorittaa testit ja muodostaa testikattavuusraportin, joka avautuu suoraan oletusselaimeen (Vain Linux -käyttöjärjestelmällä)
+
+### Staattinen analyysi:
+Komento `poetry run invoke lint` suorittaa .pylintrc -tiedostossa määrätyillä asetuksilla koodin staattisen analyysin ja antaa palautetta koodin laadusta. Testi- ja käyttöliittymähakemistot on jätetty analyysin ulkopuolelle.
