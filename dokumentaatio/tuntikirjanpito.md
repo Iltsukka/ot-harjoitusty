@@ -11,3 +11,5 @@
 |11.04|1.5h|ListBox Widget otettu käyttöön kirjojen näyttämistä varten|
 |11.04|2h|Widget kirjojen suodatusta varten, refaktoroi koodia|
 |12.04|1.5h|Kirjojen suodattaminen otsikon/kirjailijan perusteella|
+|16.04|2h| Testien laajentaminen, dokumentaation päivittäminen, pieniä bugikorjauksia|
+|Tuntien summa| 18.5h|
