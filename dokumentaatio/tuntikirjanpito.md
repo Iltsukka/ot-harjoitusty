@@ -12,4 +12,6 @@
 |11.04|2h|Widget kirjojen suodatusta varten, refaktoroi koodia|
 |12.04|1.5h|Kirjojen suodattaminen otsikon/kirjailijan perusteella|
 |16.04|2h| Testien laajentaminen, dokumentaation päivittäminen, pieniä bugikorjauksia|
-|Tuntien summa| 18.5h|
+|17.04|1h|Tutustuminen sqliten käyttöönottoon|
+|18.04|2h|Sqliten käyttöönotto projektissa ja BookRepository käyttämään tietokantaa|
+|Tuntien summa| 21.5h|
