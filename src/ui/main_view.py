@@ -21,12 +21,11 @@ class MainView:
         title = self._title_entry.get()
         author = self._author_entry.get()
         created_book = book_service.create_book(title, author)
-        book_information = f'{created_book.title} - {created_book.author}'
+        book_information = f'{created_book.title}   -   {created_book.author}'
         self._book_listbox.insert(END, book_information)
         self._title_entry.delete(0, END)
         self._author_entry.delete(0, END)
-        for book in self._books:
-            print(book.title)
+        
     
     def _initialize_add_book(self):
         self._frame = ttk.Frame(master=self._root)
@@ -61,7 +60,7 @@ class MainView:
         filter_menu = ttk.OptionMenu(self._frame_second, filter_header, *filter_options, command=self._sort_by)
         filter_menu.grid(row=2, column=2, columnspan=2, sticky=(constants.W, constants.E), padx=5)
         for book in self._books:
-            book_information = f'{book.title} - {book.author}'
+            book_information = f'{book.title}   -   {book.author}'
             self._book_listbox.insert(END, book_information)
         self._frame_second.grid_columnconfigure(1, weight=1)
         self._frame_second.grid_columnconfigure(0, weight=1)
@@ -77,17 +76,21 @@ class MainView:
     def _update_book_list(self, sorted_books):
         self._book_listbox.delete(0, END)
         for book in sorted_books:
-            book_information = f'{book.title} - {book.author}'
+            book_information = f'{book.title}   -   {book.author}'
             self._book_listbox.insert(END, book_information)
     
-    #need to update deleting on repository and service level as well
     def _delete(self):
         selection = self._book_listbox.curselection()
         if selection == ():
             print('no option chosen for deletion')
             return #need to throw an error visible to user
-        print(self._book_listbox.get(selection))
-        self._book_listbox.delete(selection)
+        chosen_book = self._book_listbox.get(selection)
+        book_info = chosen_book.split('   -   ')
+        title = book_info[0].strip()
+        author = book_info[1].strip()
+        if book_service.delete_book(title, author):
+            self._book_listbox.delete(selection)
+        
     
     def destroy(self):
         self._frame.destroy()

@@ -18,5 +18,11 @@ class BookService:
 
         return books
 
+    def delete_book(self, title, author):
+        if self.book_repository.delete(title, author):
+            return True
+        return False
+
+
 
 book_service = BookService()

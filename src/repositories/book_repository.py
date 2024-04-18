@@ -1,16 +1,36 @@
 from entities.book import Book
+from database_connection import get_database_connection
 
 class BookRepository:
-    def __init__(self):
-        self._books = [Book('Testbook', 'Waltari', 2),
-                        Book('Roman', 'Waltari', 3), Book('The grapes of wrath', 'Steinbeck', 4)]
+    def __init__(self, connection):
+        self._connection = connection
 
     def find_all(self):
-        return self._books
+        cursor = self._connection.cursor()
+        res = cursor.execute('SELECT * FROM books')
+        books = res.fetchall()
+        book_objects = []
+        for book in books:
+            book_objects.append(Book(book['title'], book['author'], book['id']))
+        return book_objects
 
     def add_book(self, title, author):
-        book = Book(title, author, 0)
-        self._books.append(book)
+        cursor = self._connection.cursor()
+        cursor.execute("INSERT INTO books (title, author) VALUES (?,?)", (title, author))
+        book_id = cursor.lastrowid
+        self._connection.commit()
+        cursor.execute("SELECT * FROM books WHERE id = ?", (book_id,))
+        row = cursor.fetchone()
+        book = Book(row['title'], row['author'], row['id'])
         return book
 
-book_repository = BookRepository()
+    def delete(self, title, author):
+        cursor = self._connection.cursor()
+        cursor.execute("DELETE FROM books WHERE title = ? AND author = ?", (title, author))
+        deleted_rows = cursor.rowcount
+        self._connection.commit()
+        if deleted_rows > 0:
+            return True
+        return False
+
+book_repository = BookRepository(get_database_connection())
