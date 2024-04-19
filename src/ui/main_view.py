@@ -1,4 +1,4 @@
-from tkinter import ttk, constants, Listbox, END, StringVar
+from tkinter import ttk, constants, Listbox, END, StringVar, messagebox
 from services.book_service import book_service
 
 class MainView:
@@ -20,6 +20,9 @@ class MainView:
     def _create_book(self):
         title = self._title_entry.get()
         author = self._author_entry.get()
+        if title == '' or author == '':
+            messagebox.showinfo('Invalid input', 'Title or author cannot be set to zero characters')
+            return
         created_book = book_service.create_book(title, author)
         book_information = f'{created_book.title}   -   {created_book.author}'
         self._book_listbox.insert(END, book_information)
@@ -82,14 +85,14 @@ class MainView:
     def _delete(self):
         selection = self._book_listbox.curselection()
         if selection == ():
-            print('no option chosen for deletion')
-            return #need to throw an error visible to user
+            return
         chosen_book = self._book_listbox.get(selection)
         book_info = chosen_book.split('   -   ')
         title = book_info[0].strip()
         author = book_info[1].strip()
-        if book_service.delete_book(title, author):
-            self._book_listbox.delete(selection)
+        if messagebox.askyesno('CONFIRM DELETION', f'Are you sure you want to delete book {title} by {author} ?'):
+            if book_service.delete_book(title, author):
+                self._book_listbox.delete(selection)
         
     
     def destroy(self):
