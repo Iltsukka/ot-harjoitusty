@@ -13,7 +13,15 @@ Ohjelma, jonka avulla ylläpidetään lukulistaa, jolta voi lisätä, poistaa ja
 [Arkkitehtuurikuvaus](https://github.com/Iltsukka/ot-harjoitusty/blob/main/dokumentaatio/arkkitehtuuri.md)
 
 ## Alustustoimenpiteet:
+
+### Suoritusympäristön alustaminen:
+
 Suorita projektin juurihakemistossa komento `poetry install`, jotta sovelluksen suoritusympäristö päivittyy
+
+### Tietokannan alustaminen:
+
+Suorita projektin juurihakemistossa komento `poetry run invoke build`, joka luo tietokannan database.sqlite /data hakemiston alle
+
 ## Komentorivitoiminnot:
 
 ### Sovelluksen käynnistys:
