@@ -20,7 +20,9 @@ Suorita projektin juurihakemistossa komento `poetry install`, jotta sovelluksen 
 
 ### Tietokannan alustaminen:
 
-Suorita projektin juurihakemistossa komento `poetry run invoke build`, joka luo tietokannan database.sqlite /data hakemiston alle
+Luo projektin juurihakemistoon tiedosto .env, jossa rivi `DATABASE_NAME=haluamasi_tietokannan_nimi.sqlite`, ESIMERKIKSI `DATABASE_NAME=database.sqlite`
+
+Suorita projektin juurihakemistossa komento `poetry run invoke build`, joka luo tietokannan /data hakemiston alle
 
 ## Komentorivitoiminnot:
 
