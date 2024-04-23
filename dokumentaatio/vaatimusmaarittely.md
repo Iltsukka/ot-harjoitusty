@@ -12,7 +12,7 @@ Alussa sovelluksen perusominaisuudet tullaan toteuttamaan yksi käyttäjä miele
 
 - Mahdollisuus lisätä kirja **Tehty**
 - Kirjan poistaminen listasta **Tehty**
-- Mahdollisuus suodattaa kirjoja sukunimen perusteella
+- Mahdollisuus suodattaa kirjoja sukunimen perusteella **Tehty**
 
 ## Jatkokehitysideoita
 - Kirjautuminen ja käyttäjänhallinta

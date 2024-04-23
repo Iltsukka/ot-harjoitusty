@@ -16,4 +16,7 @@
 - Dokumentaatio ajantasaistettu viikon 4 tavoitteiden osalta
 
 ## Viikko 5
-- SQLITE tietokanta otettu käyttöön ja luokkien metodit sen mukaisiksi
+- SQLITE tietokanta otettu käyttöön
+- BookRepository -luokka muutettu käyttämään tietokantaa kirjojen luku, lisäys ja poisto -operaatioissa
+- BookRepository -luokalle tehty automatisoidut testit, jotka käyttävät testitietokantaa
+- Järjevät ilmoitukset kirjojen poiston ja lisäyksen (jos syötekentät tyhjiä)  yhteydessä
