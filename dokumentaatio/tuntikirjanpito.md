@@ -15,4 +15,5 @@
 |17.04|1h|Tutustuminen sqliten käyttöönottoon|
 |18.04|2h|Sqliten käyttöönotto projektissa ja BookRepository käyttämään tietokantaa|
 |19.04|1h|Pop-up ilmoitukset kirjan poiston ja lisäämisen yhteyteen, invoke task build tietokannan alustamiseen|
-|Tuntien summa| 22.5h|
+|22.04|2h|BookRepository testit|
+|Tuntien summa| 24.5h|
