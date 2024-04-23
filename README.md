@@ -4,6 +4,8 @@ Ohjelma, jonka avulla ylläpidetään lukulistaa, jolta voi lisätä, poistaa ja
 
 ## Dokumentaatio:
 
+[Release](https://github.com/Iltsukka/ot-harjoitusty/releases/tag/viikko5)
+
 [Vaatimusmäärittely](https://github.com/Iltsukka/ot-harjoitusty/blob/main/dokumentaatio/vaatimusmaarittely.md)
 
 [Työaikakirjanpito](https://github.com/Iltsukka/ot-harjoitusty/blob/main/dokumentaatio/tuntikirjanpito.md)
