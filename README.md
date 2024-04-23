@@ -1,6 +1,6 @@
 # Ohjelmistotekniikka, harjoitustyo
 ## Book management app
-Ohjelma, jonka avulla ylläpidetään lukulistaa, jolta voi lisätä, poistaa ja suodattaa kirjoja.
+Ohjelma, jonka avulla ylläpidetään lukulistaa, jolta voi lisätä, poistaa ja suodattaa kirjoja. Ohjelman tarkoituksena on luoda alusta, jolla näitä toimintoja on helppo hallinnoida.
 
 ## Dokumentaatio:
 
@@ -20,9 +20,17 @@ Suorita projektin juurihakemistossa komento `poetry install`, jotta sovelluksen 
 
 ### Tietokannan alustaminen:
 
+#### Varsinainen tietokanta:
+
 Luo projektin juurihakemistoon tiedosto .env, jossa rivi `DATABASE_NAME=haluamasi_tietokannan_nimi.sqlite`, ESIMERKIKSI `DATABASE_NAME=database.sqlite`
 
-Suorita projektin juurihakemistossa komento `poetry run invoke build`, joka luo tietokannan /data hakemiston alle
+#### Testitietokanta:
+
+Luo myös juurihakemistoon tiedosto .env.test, jossa rivi `DATABASE_NAME=testitietokannan_nimi.sqlite`, ESIMERKIKSI `DATABASE_NAME=test-database.sqlite`
+
+#### Build:
+
+Suorita .env ja .env.test -tiedostojen luonnin jälkeen projektin juurihakemistossa komento `poetry run invoke build`, joka luo tietokannan /data hakemiston alle
 
 ## Komentorivitoiminnot:
 
