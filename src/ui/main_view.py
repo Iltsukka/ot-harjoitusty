@@ -2,7 +2,17 @@ from tkinter import ttk, constants, Listbox, END, StringVar, messagebox
 from services.book_service import book_service
 
 class MainView:
+    """Vastaa sovelluksen päänäkymästä
+
+    Attributes:
+        root: Tkinterin root-elementti.
+    """
     def __init__(self, root):
+        """Luokan konstruktori, jossa graafiset komponentit ylläpidetään.
+
+        Args:
+            root: Tkinterin root-elementti.
+        """
         self._root = root
         self._frame = None
         self._frame_second = None
@@ -13,11 +23,15 @@ class MainView:
         self._initialize()
     
     def _initialize(self):
+        """Alustaa kirjan lisäämisen lomakentät ja kirjan näyttämisen komponentit.
+        """
         self._initialize_add_book()
         self._initialize_book_list_view()
         
 
     def _create_book(self):
+        """Vastaa uuden kirjan luonnista ja näyttämisestä.
+        """
         title = self._title_entry.get()
         author = self._author_entry.get()
         if title == '' or author == '':
@@ -31,6 +45,8 @@ class MainView:
         
     
     def _initialize_add_book(self):
+        """Graafinen komponentti kirjojen lisäystä varten.
+        """
         self._frame = ttk.Frame(master=self._root)
         label = ttk.Label(master=self._frame, text='Add a Book')
         title_label = ttk.Label(master=self._frame, text='Title:')
@@ -47,6 +63,8 @@ class MainView:
         self._frame.grid_columnconfigure(1, weight=1, minsize=300)
 
     def _initialize_book_list_view(self):
+        """Graafinen komponentti kirjojen näyttämistä varten.
+        """
         self._frame_second = ttk.Frame(master=self._root)
         self._book_listbox = Listbox(master=self._frame_second, width=40)
         self._book_listbox.grid(row=1, column=0,rowspan=3, columnspan=2, sticky=(constants.W, constants.E))
@@ -72,6 +90,11 @@ class MainView:
 
 
     def _sort_by(self, option):
+        """Suodattaa kirjat käyttäjän valitsemalla tavalla.
+
+        Args:
+            option: Käyttäjä valitsee, suodatetaanko kirjat joko kirjan nimen tai kirjailijan perusteella. 
+        """
         sorted_books = book_service.sort_by(option)
         self._update_book_list(sorted_books)
 

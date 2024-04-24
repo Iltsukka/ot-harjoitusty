@@ -2,10 +2,24 @@ from entities.book import Book
 from database_connection import get_database_connection
 
 class BookRepository:
+    """Luokka, joka vastaa kirjojen tietokantaoperaatioista
+
+    Attributes: connection: Tietokantayhteys.
+    """
     def __init__(self, connection):
+        """Luokan konstruktori, joka luo uuden BookRepository olion
+
+        Args:
+            connection: Tietokantayhteys.
+        """
         self._connection = connection
 
     def find_all(self):
+        """Hakee tietokannasta kaikki kirjat
+
+        Returns:
+            Lista Book -olioita, joilla attribuutit 'title', 'author' ja 'id'
+        """
         cursor = self._connection.cursor()
         res = cursor.execute('SELECT * FROM books')
         books = res.fetchall()
@@ -15,6 +29,15 @@ class BookRepository:
         return book_objects
 
     def add_book(self, title, author):
+        """Lisää kirjan tietokantaan
+
+        Args:
+            title: Kirjan nimi.
+            author: Kirjailijan nimi.
+
+        Returns:
+            Kirja-objekti, jolla atribuutit 'title', 'author' ja 'id'.
+        """
         cursor = self._connection.cursor()
         cursor.execute("INSERT INTO books (title, author) VALUES (?,?)", (title, author))
         book_id = cursor.lastrowid
@@ -25,6 +48,15 @@ class BookRepository:
         return book
 
     def delete(self, title, author):
+        """Poistaa kirjan tiedot tietokannasta
+
+        Args:
+            title: Kirjan nimi.
+            author: Kirjailijan nimi.
+
+        Returns:
+            True, jos poisto onnistuu, muutoin False.
+        """
         cursor = self._connection.cursor()
         cursor.execute("DELETE FROM books WHERE title = ? AND author = ?", (title, author))
         deleted_rows = cursor.rowcount
