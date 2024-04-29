@@ -37,6 +37,9 @@ class MainView:
         if title == '' or author == '':
             messagebox.showinfo('Invalid input', 'Title or author cannot be set to zero characters')
             return
+        if book_service.book_exists(title, author):
+            messagebox.showinfo(title='Book already exists', message='Book with same name exists already')
+            return
         created_book = book_service.create_book(title, author)
         book_information = f'{created_book.title}   -   {created_book.author}'
         self._book_listbox.insert(END, book_information)
@@ -48,6 +51,8 @@ class MainView:
         """Graafinen komponentti kirjojen lisäystä varten.
         """
         self._frame = ttk.Frame(master=self._root)
+        logged_in_label = ttk.Label(master=self._frame, text='Logged in as')
+        logged_in_label.grid()
         label = ttk.Label(master=self._frame, text='Add a Book')
         title_label = ttk.Label(master=self._frame, text='Title:')
         author_label = ttk.Label(master=self._frame, text='Author:')

@@ -65,4 +65,12 @@ class BookRepository:
             return True
         return False
 
+    def find_book(self, title, author):
+        cursor = self._connection.cursor()
+        cursor.execute("SELECT * FROM books WHERE title = ? AND author = ?", (title, author))
+        book = cursor.fetchone()
+        if book:
+            return True
+        return False
+
 book_repository = BookRepository(get_database_connection())

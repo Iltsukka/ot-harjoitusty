@@ -18,5 +18,5 @@
 |22.04|2h|BookRepository testit ja testitietokannan konfigurointi|
 |23.04|2h|Dokumentaation päivittäminen, sekvenssikaavioiden luominen ja GitHub Release|
 |25.04|2h|Kirjautumisen ja rekisteröinnin työstäminen|
-|29.04|2h|Kirjautumisen työstäminen jatkuu|
-|Tuntien summa| 30.5h|
+|29.04|4h|Kirjautumisen työstäminen jatkuu|
+|Tuntien summa| 32.5h|

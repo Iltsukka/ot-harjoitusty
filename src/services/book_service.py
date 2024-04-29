@@ -23,6 +23,9 @@ class BookService:
             return True
         return False
 
+    def book_exists(self, title, author):
+        return self.book_repository.find_book(title, author)
+
 
 
 book_service = BookService()
