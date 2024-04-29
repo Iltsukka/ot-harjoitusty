@@ -17,4 +17,6 @@
 |19.04|1h|Pop-up ilmoitukset kirjan poiston ja lisäämisen yhteyteen, invoke task build tietokannan alustamiseen|
 |22.04|2h|BookRepository testit ja testitietokannan konfigurointi|
 |23.04|2h|Dokumentaation päivittäminen, sekvenssikaavioiden luominen ja GitHub Release|
-|Tuntien summa| 26.5h|
+|25.04|2h|Kirjautumisen ja rekisteröinnin työstäminen|
+|29.04|2h|Kirjautumisen työstäminen jatkuu|
+|Tuntien summa| 30.5h|
