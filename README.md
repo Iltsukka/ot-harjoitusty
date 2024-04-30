@@ -4,7 +4,7 @@ Ohjelma, jonka avulla ylläpidetään lukulistaa, jolta voi lisätä, poistaa ja
 
 ## Dokumentaatio:
 
-[Release](https://github.com/Iltsukka/ot-harjoitusty/releases/tag/viikko5)
+[Release](https://github.com/Iltsukka/ot-harjoitusty/releases/tag/viikko6)
 
 [Vaatimusmäärittely](https://github.com/Iltsukka/ot-harjoitusty/blob/main/dokumentaatio/vaatimusmaarittely.md)
 
