@@ -15,5 +15,5 @@ Alussa sovelluksen perusominaisuudet tullaan toteuttamaan yksi käyttäjä miele
 - Mahdollisuus suodattaa kirjoja sukunimen perusteella **Tehty**
 
 ## Jatkokehitysideoita
-- Kirjautuminen ja käyttäjänhallinta
+- Kirjautuminen ja käyttäjänhallinta **Tehty**
 - Toiminnallisuus kirjojen arvostelua varten (kirjoille voidaan lisätä esimerkiksi kuvaus)
