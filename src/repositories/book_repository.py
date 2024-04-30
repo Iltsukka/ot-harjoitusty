@@ -17,6 +17,9 @@ class BookRepository:
     def find_all(self, username):
         """Hakee tietokannasta kaikki kirjat
 
+        Args:
+            Username: Käyttäjän tunniste.
+
         Returns:
             Lista Book -olioita, joilla attribuutit 'title', 'author' ja 'id'
         """
@@ -34,6 +37,7 @@ class BookRepository:
         Args:
             title: Kirjan nimi.
             author: Kirjailijan nimi.
+            Username: Käyttäjän tunniste.
 
         Returns:
             Kirja-objekti, jolla atribuutit 'title', 'author' ja 'id'.
@@ -53,6 +57,7 @@ class BookRepository:
         Args:
             title: Kirjan nimi.
             author: Kirjailijan nimi.
+            username: Käyttäjän tunniste.
 
         Returns:
             True, jos poisto onnistuu, muutoin False.

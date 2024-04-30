@@ -2,6 +2,8 @@ from tkinter import ttk, constants, messagebox
 from services.user_service import user_service
 
 class LoginView:
+    """Luokka, joka vastaa kirjautumislomakkeen näyttämisestä.
+    """
     def __init__(self, root, handle_login, handle_register):
         self._root = root
         self._frame = None
@@ -12,6 +14,8 @@ class LoginView:
         self._initialize()
     
     def _initialize(self):
+        """Alustaa käyttäjälle näytettävät graafiset komponentit.
+        """
         self._frame = ttk.Frame(master=self._root)
 
         heading_label = ttk.Label(master=self._frame, text='Login')
@@ -33,6 +37,8 @@ class LoginView:
         self._frame.grid_columnconfigure(1, weight=1, minsize=300)
 
     def _validate_login(self):
+        """Tarkistaa, onko käyttäjällä oikeus kirjautua sisään.
+        """
         username = self._username_entry.get()
         password = self._password_entry.get()
         if user_service.check_login_credentials(username, password):

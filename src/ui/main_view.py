@@ -6,12 +6,14 @@ class MainView:
 
     Attributes:
         root: Tkinterin root-elementti.
+        log_in_username: Käyttäjän tunniste.
     """
     def __init__(self, root, log_in_username):
         """Luokan konstruktori, jossa graafiset komponentit ylläpidetään.
 
         Args:
             root: Tkinterin root-elementti.
+            log_in_username: Käyttäjän tunniste.
         """
         self._root = root
         self._log_in_username = log_in_username
@@ -106,12 +108,19 @@ class MainView:
 
     
     def _update_book_list(self, sorted_books):
+        """Päivittää näytettävät kirjat
+
+        Args:
+            sorted_books: lista suodatettuja kirjoja.
+        """
         self._book_listbox.delete(0, END)
         for book in sorted_books:
             book_information = f'{book.title}   -   {book.author}'
             self._book_listbox.insert(END, book_information)
     
     def _delete(self):
+        """Vastaa kirjan poistamisesta
+        """
         selection = self._book_listbox.curselection()
         if selection == ():
             return

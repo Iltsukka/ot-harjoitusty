@@ -16,4 +16,6 @@ Alussa sovelluksen perusominaisuudet tullaan toteuttamaan yksi käyttäjä miele
 
 ## Jatkokehitysideoita
 - Kirjautuminen ja käyttäjänhallinta **Tehty**
+- Uloskirjautumisen toiminnallisuus (lisätty 30.04)
+- Mahdollisuus suodattaa kirjoja hakusanan perusteella (lisätty 30.04)
 - Toiminnallisuus kirjojen arvostelua varten (kirjoille voidaan lisätä esimerkiksi kuvaus)

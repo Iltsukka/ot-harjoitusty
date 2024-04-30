@@ -20,3 +20,10 @@
 - BookRepository -luokka muutettu käyttämään tietokantaa kirjojen luku, lisäys ja poisto -operaatioissa
 - BookRepository -luokalle tehty automatisoidut testit, jotka käyttävät testitietokantaa
 - Järjevät ilmoitukset kirjojen poiston ja lisäyksen (jos syötekentät tyhjiä)  yhteydessä
+
+## Viikko 6
+- Käyttäjän kirjautuminen ja rekisteröinti mahdollista
+- Käyttäjälle näytetään vain omat kirjat
+- Lisätty järkeviä ilmoituksia mm. kirjautumisen ja rekisteröinnin virheisiin
+- Testausta on kattavasti lisätty, mm. user_repository luokan osalta.
+- Aiemmat testit refaktoroitu sovelluksen rakenteen muutosten johdosta

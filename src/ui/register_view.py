@@ -2,6 +2,8 @@ from tkinter import ttk, constants, messagebox
 from services.user_service import user_service
 
 class RegisterView:
+    """Vastaa käyttäjän rekisteröinnistä.
+    """
     def __init__(self, root, show_login_view, handle_login):
         self._root = root
         self._frame = None
@@ -13,6 +15,8 @@ class RegisterView:
         self._initialize()
     
     def _initialize(self):
+        """Alustaa näytettävät graafiset komponentit.
+        """
         self._frame = ttk.Frame(master=self._root)
 
         heading_label = ttk.Label(master=self._frame, text='Register')
@@ -39,6 +43,8 @@ class RegisterView:
         self._frame.grid_columnconfigure(1, weight=1, minsize=300)
     
     def _register(self):
+        """Vastaa käyttäjän luonnista.
+        """
         username = self._username_entry.get()
         password = self._password_entry.get()
         password_conf = self._password_confirmation_entry.get()
