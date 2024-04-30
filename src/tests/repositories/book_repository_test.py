@@ -26,4 +26,15 @@ class TestBookRepository(unittest.TestCase):
         self.assertEqual(book.author, 'author')
         books = book_repository.find_all('test-user')
         self.assertEqual(len(books), 3)
+    
+    def test_deleting_a_book(self):
+        book_repository.delete('Dogmaster','Chicken','test-user')
+        books = book_repository.find_all('test-user')
+        self.assertEqual(len(books),1)
+    
+    def test_searching_for_specific_book(self):
+        book = book_repository.find_book('Catmaster', 'Kukko', 'test-user')
+        self.assertTrue(book)
+        non_existing_book = book_repository.find_book('chillaa', 'jäinen','godzilla')
+        self.assertFalse(non_existing_book)
 
