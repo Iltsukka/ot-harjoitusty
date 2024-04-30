@@ -19,4 +19,5 @@
 |23.04|2h|Dokumentaation päivittäminen, sekvenssikaavioiden luominen ja GitHub Release|
 |25.04|2h|Kirjautumisen ja rekisteröinnin työstäminen|
 |29.04|4h|Kirjautumisen työstäminen jatkuu|
-|Tuntien summa| 32.5h|
+|30.04|2h|Kirjautuminen saatu valmiiksi, refaktoroi testit ja sovelluslogiikka|
+|Tuntien summa| 34.5h|
