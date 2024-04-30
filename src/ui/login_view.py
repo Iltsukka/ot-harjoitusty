@@ -36,7 +36,7 @@ class LoginView:
         username = self._username_entry.get()
         password = self._password_entry.get()
         if user_service.check_login_credentials(username, password):
-            self._handle_login()
+            self._handle_login(username)
             return
         messagebox.showerror(title='Invalid user credentials', message='Login Failed')
     

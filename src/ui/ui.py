@@ -11,9 +11,9 @@ class UI:
     def start(self):
         self._show_login_view()
     
-    def _show_main_view(self):
+    def _show_main_view(self, username):
         self._hide_current_view()
-        self._current_view = MainView(self._root)
+        self._current_view = MainView(self._root, username)
         self._current_view.pack()
 
     def _show_login_view(self):
@@ -21,8 +21,8 @@ class UI:
         self._current_view = LoginView(self._root, self._handle_login, self._handle_register)
         self._current_view.pack()
 
-    def _handle_login(self):
-        self._show_main_view()
+    def _handle_login(self, username):
+        self._show_main_view(username)
     
     def _handle_register(self):
         self._show_register_view()
@@ -30,7 +30,7 @@ class UI:
     
     def _show_register_view(self):
         self._hide_current_view()
-        self._current_view = RegisterView(self._root, self._show_login_view )
+        self._current_view = RegisterView(self._root, self._show_login_view, self._handle_login )
         self._current_view.pack()
     
     def _hide_current_view(self):

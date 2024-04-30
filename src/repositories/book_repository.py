@@ -14,21 +14,21 @@ class BookRepository:
         """
         self._connection = connection
 
-    def find_all(self):
+    def find_all(self, username):
         """Hakee tietokannasta kaikki kirjat
 
         Returns:
             Lista Book -olioita, joilla attribuutit 'title', 'author' ja 'id'
         """
         cursor = self._connection.cursor()
-        res = cursor.execute('SELECT * FROM books')
+        res = cursor.execute('SELECT * FROM books WHERE username = ?',(username,))
         books = res.fetchall()
         book_objects = []
         for book in books:
             book_objects.append(Book(book['title'], book['author'], book['id']))
         return book_objects
 
-    def add_book(self, title, author):
+    def add_book(self, title, author, username):
         """Lisää kirjan tietokantaan
 
         Args:
@@ -39,7 +39,7 @@ class BookRepository:
             Kirja-objekti, jolla atribuutit 'title', 'author' ja 'id'.
         """
         cursor = self._connection.cursor()
-        cursor.execute("INSERT INTO books (title, author) VALUES (?,?)", (title, author))
+        cursor.execute("INSERT INTO books (title, author, username) VALUES (?,?,?)", (title, author, username))
         book_id = cursor.lastrowid
         self._connection.commit()
         cursor.execute("SELECT * FROM books WHERE id = ?", (book_id,))
@@ -47,7 +47,7 @@ class BookRepository:
         book = Book(row['title'], row['author'], row['id'])
         return book
 
-    def delete(self, title, author):
+    def delete(self, title, author, username):
         """Poistaa kirjan tiedot tietokannasta
 
         Args:
@@ -58,19 +58,24 @@ class BookRepository:
             True, jos poisto onnistuu, muutoin False.
         """
         cursor = self._connection.cursor()
-        cursor.execute("DELETE FROM books WHERE title = ? AND author = ?", (title, author))
+        cursor.execute("DELETE FROM books WHERE title = ? AND author = ? AND username = ?", (title, author, username))
         deleted_rows = cursor.rowcount
         self._connection.commit()
         if deleted_rows > 0:
             return True
         return False
 
-    def find_book(self, title, author):
+    def find_book(self, title, author, username):
         cursor = self._connection.cursor()
-        cursor.execute("SELECT * FROM books WHERE title = ? AND author = ?", (title, author))
+        cursor.execute("SELECT * FROM books WHERE title = ? AND author = ? AND username = ?", (title, author, username))
         book = cursor.fetchone()
         if book:
             return True
         return False
+
+    def delete_all(self):
+        cursor = self._connection.cursor()
+        cursor.execute('delete from books')
+        self._connection.commit()
 
 book_repository = BookRepository(get_database_connection())

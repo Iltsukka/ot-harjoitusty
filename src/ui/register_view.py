@@ -2,10 +2,11 @@ from tkinter import ttk, constants, messagebox
 from services.user_service import user_service
 
 class RegisterView:
-    def __init__(self, root, show_login_view):
+    def __init__(self, root, show_login_view, handle_login):
         self._root = root
         self._frame = None
         self._show_login_view = show_login_view
+        self._handle_login = handle_login
         self._username_entry = None
         self._password_entry = None
         self._password_confirmation_entry = None
@@ -46,6 +47,7 @@ class RegisterView:
             return
         if user_service.register_user(username, password):
             messagebox.showinfo(title='Success', message=f'User {username} was successfully created!')
+            self._handle_login(username)
             return
         messagebox.showwarning(title='Could not create user', message='Username is already in use')
     

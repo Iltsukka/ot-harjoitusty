@@ -7,19 +7,20 @@ class MainView:
     Attributes:
         root: Tkinterin root-elementti.
     """
-    def __init__(self, root):
+    def __init__(self, root, log_in_username):
         """Luokan konstruktori, jossa graafiset komponentit ylläpidetään.
 
         Args:
             root: Tkinterin root-elementti.
         """
         self._root = root
+        self._log_in_username = log_in_username
         self._frame = None
         self._frame_second = None
         self._title_entry = None
         self._author_entry = None
         self._book_listbox = None
-        self._books = book_service.all_books()
+        self._books = book_service.all_books(log_in_username)
         self._initialize()
     
     def _initialize(self):
@@ -37,10 +38,10 @@ class MainView:
         if title == '' or author == '':
             messagebox.showinfo('Invalid input', 'Title or author cannot be set to zero characters')
             return
-        if book_service.book_exists(title, author):
+        if book_service.book_exists(title, author, self._log_in_username):
             messagebox.showinfo(title='Book already exists', message='Book with same name exists already')
             return
-        created_book = book_service.create_book(title, author)
+        created_book = book_service.create_book(title, author, self._log_in_username)
         book_information = f'{created_book.title}   -   {created_book.author}'
         self._book_listbox.insert(END, book_information)
         self._title_entry.delete(0, END)
@@ -51,7 +52,7 @@ class MainView:
         """Graafinen komponentti kirjojen lisäystä varten.
         """
         self._frame = ttk.Frame(master=self._root)
-        logged_in_label = ttk.Label(master=self._frame, text='Logged in as')
+        logged_in_label = ttk.Label(master=self._frame, text=f'Logged in as {self._log_in_username}')
         logged_in_label.grid()
         label = ttk.Label(master=self._frame, text='Add a Book')
         title_label = ttk.Label(master=self._frame, text='Title:')
@@ -100,7 +101,7 @@ class MainView:
         Args:
             option: Käyttäjä valitsee, suodatetaanko kirjat joko kirjan nimen tai kirjailijan perusteella. 
         """
-        sorted_books = book_service.sort_by(option)
+        sorted_books = book_service.sort_by(option, self._log_in_username)
         self._update_book_list(sorted_books)
 
     
@@ -119,7 +120,7 @@ class MainView:
         title = book_info[0].strip()
         author = book_info[1].strip()
         if messagebox.askyesno('CONFIRM DELETION', f'Are you sure you want to delete book {title} by {author} ?'):
-            if book_service.delete_book(title, author):
+            if book_service.delete_book(title, author, self._log_in_username):
                 self._book_listbox.delete(selection)
         
     
