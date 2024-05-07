@@ -22,17 +22,17 @@ Komento `poetry run invoke lint` suorittaa .pylintrc -tiedostossa määrätyill�
 
 Sovellus käynnistyy kirjautumisnäkymään
 
-![](./kuvat/login_page.png)
+![](/kuvat/login_page.png)
 
 Painamalla `click here to register` pääset luomaan uutta käyttäjää.
 
 Aukeaa rekisteröitymisnäkymä:
 
-![](./kuvat/register_page.png)
+![](/kuvat/register_page.png)
 
 Syötä tarvittavat tiedot eli käyttäjänimi, salasana ja salasanan varmennus ja paina `register` niin sovellus luo uuden käyttäjän ja avaa päänäkymän.
 
-![](./kuvat/main_page.png)
+![](/kuvat/main_page.png)
 
 ### Sovelluksen toimintoja:
 
