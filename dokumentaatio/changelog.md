@@ -27,3 +27,7 @@
 - Lisätty järkeviä ilmoituksia mm. kirjautumisen ja rekisteröinnin virheisiin
 - Testausta on kattavasti lisätty, mm. user_repository luokan osalta.
 - Aiemmat testit refaktoroitu sovelluksen rakenteen muutosten johdosta
+
+## Viimeinen viikko
+- Dokumentaation ajantasaistaminen
+- Bugikorjauksia
