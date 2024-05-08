@@ -2,20 +2,20 @@
 
 ## Sovelluksen tarkoitus:
 
-Sovelluksen tarkoituksena on luoda ja ylläpitää lukulistaa, jonne mielenkiintoisia luettuja/lukemattomia kirjoja voi lisätä. Kirjoja voi suodattaa mm. kirjailijan sukunimen perusteella ja tietenkin poistaa listalta.
+Sovelluksen tarkoituksena on toimia alustana, jolta kirjalista esimerkiksi lukulistan hallinta on helppoa. Sovellus mahdollistaa kirjojen lisäämisen, poistamisen sekä suodattamisen eri avainten perusteella.
 
 ## Käyttäjät:
 
-Alussa sovelluksen perusominaisuudet tullaan toteuttamaan yksi käyttäjä mielessä, joten muita rooleja ei ole. Mikäli kirjautumisjärjestelmä useammalle käyttäjälle toteutetaan, voidaan harkita ylläpitäjäroolin lisäämistä.
+Useamman käyttäjän on mahdollista käyttää sovellusta. Sovellus käynnistyy kirjautumis- ja rekisteröinti näkymään, josta voi sovelluksen käyttöohjetta seuraamalla luoda itselleen käyttäjän.
 
 ## Perusversion toiminnallisuus:
 
-- Mahdollisuus lisätä kirja **Tehty**
-- Kirjan poistaminen listasta **Tehty**
-- Mahdollisuus suodattaa kirjoja sukunimen perusteella **Tehty**
+- Käyttäjä voi lisätä kirjoja.
+- Kirjan saa poistettua listasta.
+- Mahdollisuus suodattaa kirjoja kirjailijan tai kirjan nimen avulla.
+- Kirjautuminen ja käyttäjänhallinta. Käyttäjä voi rekisteröityä ja kirjautua sovellukseen.
 
 ## Jatkokehitysideoita
-- Kirjautuminen ja käyttäjänhallinta **Tehty**
-- Uloskirjautumisen toiminnallisuus (lisätty 30.04)
-- Mahdollisuus suodattaa kirjoja hakusanan perusteella (lisätty 30.04)
+- Uloskirjautumisen toiminnallisuus
+- Mahdollisuus suodattaa kirjoja hakusanan perusteella
 - Toiminnallisuus kirjojen arvostelua varten (kirjoille voidaan lisätä esimerkiksi kuvaus)
