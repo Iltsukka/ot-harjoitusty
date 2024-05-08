@@ -21,4 +21,6 @@
 |29.04|4h|Kirjautumisen työstäminen jatkuu|
 |30.04|2h|Kirjautuminen saatu valmiiksi, refaktoroi testit ja sovelluslogiikka|
 |30.04|1h|Lisätty user_repository -luokan testit|
-|Tuntien summa| 34.5h|
+|07.04|2h|Bugikorjauksia|
+|08.04|2h|Dokumentaation päivittäminen|
+|Tuntien summa| 38.5h|
