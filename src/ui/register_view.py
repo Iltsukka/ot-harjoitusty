@@ -48,6 +48,9 @@ class RegisterView:
         username = self._username_entry.get()
         password = self._password_entry.get()
         password_conf = self._password_confirmation_entry.get()
+        if username == '' or password == '':
+            messagebox.showerror(title='Input Error!', message='Username or password cannot be empty!')
+            return
         if password != password_conf:
             messagebox.showerror(title='Input Error!', message='Passwords do not match!')
             return
