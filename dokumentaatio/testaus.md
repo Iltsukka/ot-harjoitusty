@@ -4,7 +4,7 @@ Sovellusta on testattu automatisoiduilla yksikkötesteillä sekä hieman laajemm
 
 ### Testauskattavuus:
 
-![](kuvat/coverage-report.png)
+![](/kuvat/coverage-report.png)
 
 ### Yksikkö- ja integraatiotestit:
 
