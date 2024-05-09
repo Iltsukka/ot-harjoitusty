@@ -23,4 +23,5 @@
 |30.04|1h|Lisätty user_repository -luokan testit|
 |07.04|2h|Bugikorjauksia|
 |08.04|2h|Dokumentaation päivittäminen|
-|Tuntien summa| 38.5h|
+|09.04| 1h| Viimeiset muutokset dokumentaatioon|
+|Tuntien summa| 39.5h|
