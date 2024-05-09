@@ -24,7 +24,7 @@ class UserRepository:
             return True
         except sqlite3.IntegrityError:
             return False
-    
+
     def delete_users(self):
         cursor = self._connection.cursor()
         cursor.execute('delete from users')

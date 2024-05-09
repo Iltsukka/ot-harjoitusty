@@ -43,7 +43,8 @@ class BookRepository:
             Kirja-objekti, jolla atribuutit 'title', 'author' ja 'id'.
         """
         cursor = self._connection.cursor()
-        cursor.execute("INSERT INTO books (title, author, username) VALUES (?,?,?)", (title, author, username))
+        cursor.execute('''INSERT INTO books (title, author, username)
+                        VALUES (?,?,?)''', (title, author, username))
         book_id = cursor.lastrowid
         self._connection.commit()
         cursor.execute("SELECT * FROM books WHERE id = ?", (book_id,))
@@ -63,7 +64,8 @@ class BookRepository:
             True, jos poisto onnistuu, muutoin False.
         """
         cursor = self._connection.cursor()
-        cursor.execute("DELETE FROM books WHERE title = ? AND author = ? AND username = ?", (title, author, username))
+        cursor.execute('''DELETE FROM books WHERE title = ?
+                        AND author = ? AND username = ?''', (title, author, username))
         deleted_rows = cursor.rowcount
         self._connection.commit()
         if deleted_rows > 0:
@@ -72,7 +74,8 @@ class BookRepository:
 
     def find_book(self, title, author, username):
         cursor = self._connection.cursor()
-        cursor.execute("SELECT * FROM books WHERE title = ? AND author = ? AND username = ?", (title, author, username))
+        cursor.execute('''SELECT * FROM books WHERE
+                        title = ? AND author = ? AND username = ?''', (title, author, username))
         book = cursor.fetchone()
         if book:
             return True
