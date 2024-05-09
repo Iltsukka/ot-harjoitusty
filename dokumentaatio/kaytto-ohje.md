@@ -1,5 +1,7 @@
 ## Käyttöohje:
 
+Lataa aluksi viimeisin release!
+
 ### Konfiguraatio:
 
 Jos et vielä tehnyt niin, katso README.md -tiedostosta sovelluksen alustustoimenpiteet ja toimi niiden mukaan.
